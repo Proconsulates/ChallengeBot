@@ -10,7 +10,7 @@ import time
 from operator import index
 load_dotenv()
 
-TOKEN = "ODczMjc2MjEyMzY0MDgzMjUw.YQ2D2Q.RXGxN2vTBLbrW1_P9WsV9DHiTl4"
+TOKEN = "TOKEN"
 
 client = discord.Client()
 
