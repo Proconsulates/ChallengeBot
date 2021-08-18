@@ -8,7 +8,6 @@ import requests
 from discord.ext import commands
 import time
 from operator import index
-load_dotenv()
 
 TOKEN = "TOKEN"
 
@@ -200,5 +199,23 @@ async def on_message(message):
         responses = ["It is certain.", "It is decidedly so.", "Without a doubt.", "Yes - definitely.", "You may rely on it.", "As I see it, yes.","Most likely.", "Outlook good.", "Yes.", "Signs point to yes.", "Reply hazy, try again.", "Ask again later.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.", "Don't count on it.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Very doubtful."]
         embed = discord.Embed(title="Answer:", description=random.choice(responses), color=discord.Color.blue())
         await message.channel.send(embed=embed)
+
+    if message.content.startswith('$trivia'):
+        embed = discord.Embed(colour=discord.Colour.green())
+        async with aiohttp.ClientSession() as cs:
+            async with cs.get('https://trivia-api.aroary.repl.co') as r:
+                res = await r.json()
+                embed.add_field(name="Trivia", value=f"{res['question']}");
+                await message.channel.send(embed=embed)
+
+                def check(m):
+                    return m.content.startswith('$answer ') and m.channel == message.channel
+
+                response = await client.wait_for('message', check=check)
+                if (response[8:] == res['answer']):
+                    addXP(message.author.name, 10)
+                    await message.channel.send('Correct! +10XP')
+                else:
+                    await message.channel.send('Incorrect!')
 
 client.run(TOKEN)
