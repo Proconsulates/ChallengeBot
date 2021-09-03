@@ -219,7 +219,7 @@ async def on_message(message):
                     await message.channel.send('Incorrect!')
 
     if message.content.startswith('$cowroll'):
-        embed = discord.Embed(title="GET COWROLLED")
+        embed = discord.Embed(title="GET COWROLLED!")
         file = discord.File("./polish-dancing-cow.gif", filename="polish-dancing-cow.gif")
         embed.set_image(url="attachment://polish-dancing-cow.gif")
         await message.channel.send(file=file, embed=embed)
