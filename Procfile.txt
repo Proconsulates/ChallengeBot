@@ -1,0 +1,1 @@
+worker: python3 C:\Users\Lucas\OneDrive\Desktop\ChallengeBot\main.py
