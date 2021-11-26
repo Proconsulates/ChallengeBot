@@ -2,6 +2,7 @@ import aiohttp
 import random
 import discord
 from dotenv import load_dotenv
+import os
 import json
 from discord import user, user
 import requests
@@ -10,7 +11,7 @@ import time
 from operator import index
 load_dotenv()
 
-TOKEN = "ODk2MDI4NDQ0MTQ2NjYzNDI1.YWBJhA.PN77S0pZ6TNJU6-Mwmr98GhFpoY"
+TOKEN = os.getenv("TOKEN").read()
 
 client = discord.Client()
 
