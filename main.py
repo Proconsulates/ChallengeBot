@@ -11,7 +11,7 @@ import time
 from operator import index
 load_dotenv()
 
-TOKEN = os.getenv("TOKEN").read()
+TOKEN = os.getenv("TOKEN")
 
 client = discord.Client()
 
