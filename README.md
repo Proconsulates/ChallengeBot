@@ -23,7 +23,7 @@ This Discord Bot has many special commands for this Discord Server.
 
 ## Socials
 This Discord Bot was created by Proconsulates#7263<br/>
-Join the Legit Programming Discord Server: https://discord.st/Legit-Programming/<br/>
+Join the Legit Programming Discord Server: https://discord.st/Legit_Programming/<br/>
 DM me, Proconsulates#7263, if you wish to use this bot for your server.
   
 ## Contact
